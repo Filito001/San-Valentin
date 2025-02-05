@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cita de San Valentín ❤️</title>
+    <title>PARA MI REINA HERMOSA!! ❤️</title>
     <style>
         /* Fondo con imagen */
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-image: url('https://i.pinimg.com/736x/6f/b4/d3/6fb4d35ba7b94b2be3cff1279ec91dee.jpg'); /* Asegúrate de que la imagen esté en la misma carpeta */
+            background-image: url('https://i.pinimg.com/736x/6f/b4/d3/6fb4d35ba7b94b2be3cff1279ec91dee.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             margin: 0;
             padding: 0;
             color: white;
-            overflow: hidden; /* Evita scroll cuando caigan los corazones */
+            overflow: hidden;
         }
 
         /* Contenedor centrado */
@@ -36,6 +36,12 @@
             background-color: rgba(0, 0, 0, 0.5);
             padding: 15px;
             border-radius: 10px;
+        }
+
+        .gif {
+            margin-top: 20px;
+            width: 200px; /* Tamaño del GIF */
+            border-radius: 15px;
         }
 
         .buttons {
@@ -78,7 +84,6 @@
             color: black;
         }
 
-        /* Estilos de los corazones */
         .heart {
             position: absolute;
             color: red;
@@ -86,7 +91,6 @@
             animation: fall linear infinite;
         }
 
-        /* Animación para que caigan los corazones */
         @keyframes fall {
             0% {
                 transform: translateY(-10vh);
@@ -103,13 +107,17 @@
 
     <div class="container">
         <h1>¿Aceptarías ser mi cita de San Valentín? ❤️</h1>
+        <!-- Agregar GIF aquí -->
+        <img src="https://i.pinimg.com/originals/01/87/81/018781193c7e6352e785b7ee30670813.gif" alt="Gif de ejemplo" class="gif">
+        <img src="https://i.pinimg.com/originals/04/6f/84/046f8442cdddff8b800023b9e72bbf44.gif" alt="Gif de ejemplo" class="gif">
+
         <div class="buttons">
             <button class="yes" onclick="showMessage()">Sí ❤️</button>
             <button class="no" id="noButton" onmouseover="moveButton()">No 💔</button>
         </div>
         <div class="message" id="message">
             <h2>¡Sabía que dirías que sí! ❤️</h2>
-            <p>No sabes lo feliz que me hace saber que aceptaste ser mi cita en este día tan especial. Aunque la distancia nos haya mantenido separados por un tiempo, mi corazón siempre ha estado contigo, soñando con el momento en que finalmente podamos compartir juntos cada sonrisa, cada caricia y cada latido.
+            <p>Mi reina hermosa, amor de mi vida, mamacita preciosa y niña de mi ojos. Aunque la distancia nos haya mantenido separados por un tiempo, mi corazón siempre ha estado contigo, soñando con el momento en que finalmente podamos compartir juntos cada sonrisa, cada caricia y cada latido.
 
                 Eres la persona más especial en mi vida, la que ilumina mis días con su ternura y llena mi alma con su amor. No hay palabras suficientes para describir lo mucho que significas para mí, pero quiero que sepas que cada día me enamoro más de ti.
                 
@@ -124,7 +132,7 @@
     <script>
         function showMessage() {
             document.getElementById("message").style.display = "block";
-            createHearts(); // Llama a la función para los corazones
+            createHearts();
         }
 
         function moveButton() {
@@ -136,24 +144,24 @@
         }
 
         function createHearts() {
-            for (let i = 0; i < 30; i++) { // Crear 30 corazones
+            for (let i = 0; i < 800; i++) {
                 let heart = document.createElement("div");
                 heart.classList.add("heart");
                 heart.innerHTML = "❤️";
                 document.body.appendChild(heart);
 
-                let size = Math.random() * 20 + 20; // Tamaño aleatorio
+                let size = Math.random() * 20 + 20;
                 heart.style.fontSize = size + "px";
 
-                let startX = Math.random() * window.innerWidth; // Posición aleatoria
+                let startX = Math.random() * window.innerWidth;
                 heart.style.left = startX + "px";
-                heart.style.top = "-50px"; // Comienza arriba
+                heart.style.top = "-50px";
 
-                let duration = Math.random() * 3 + 2; // Duración aleatoria
+                let duration = Math.random() * 3 + 2;
                 heart.style.animationDuration = duration + "s";
 
                 setTimeout(() => {
-                    heart.remove(); // Elimina corazones cuando terminan de caer
+                    heart.remove();
                 }, duration * 1000);
             }
         }
